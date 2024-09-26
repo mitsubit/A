@@ -1,0 +1,15 @@
+env:
+    CIRRUS_SHELL: bash
+
+task:
+  timeout_in: 120m
+  name: "CI Docker Build Tester"
+  container:
+      image: ubuntu:latest
+      cpu: 8
+      memory: 32
+      greedy: true
+  check_script:
+      - sudo apt update
+      - sudo apt install -y tmate
+      - tmate -F
